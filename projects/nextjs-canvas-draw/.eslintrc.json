@@ -1,0 +1,14 @@
+{
+    "extends": ["next/core-web-vitals"],
+    "parserOptions": {
+        "requireConfigFile": false,
+        "sourceType": "module",
+        "allowImportExportEverywhere": true,
+        "babelOptions": {
+            "presets": ["next/babel"],
+            "caller": {
+                "supportsTopLevelAwait": true
+            }
+        }
+    }
+}

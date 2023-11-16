@@ -1,0 +1,31 @@
+{
+    "name": "root",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "scripts": {
+        "run:project": "pnpm --filter"
+    },
+    "dependencies": {
+        "@ant-design/pro-cli": "^3.1.0",
+        "@types/jest": "^29.5.3",
+        "@types/node": "^20.4.2",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@types/react-router-dom": "^5.3.3",
+        "@vitejs/plugin-react": "^4.1.1",
+        "@vitejs/plugin-react-swc": "^3.4.1",
+        "prop-types": "^15.8.1",
+        "typescript": "^5.2.2",
+        "vite": "^4.5.0",
+        "prettier": "^3.0.3",
+        "eslint": "^8.49.0"
+    },
+    "resolutions": {
+        "node-gyp": "9.3.1",
+        "colors": "1.4.0"
+    }
+}

@@ -1,0 +1,40 @@
+import canvasTxt from 'canvas-txt';
+import { TextObject } from '@/config/types';
+import { hexToRgba } from '../hexToRgba';
+
+export const renderText = (option: { context: CanvasRenderingContext2D } & Omit<TextObject, 'type'>) => {
+    const {
+        context,
+        x,
+        y,
+        width,
+        height,
+        opacity,
+        text,
+        textJustify,
+        textAlignHorizontal,
+        textAlignVertical,
+        fontColorHex,
+        fontSize,
+        fontFamily,
+        fontStyle,
+        fontVariant,
+        fontWeight,
+        fontLineHeightRatio,
+    } = option;
+
+    context.beginPath();
+    context.fillStyle = hexToRgba({ hex: fontColorHex, opacity });
+    canvasTxt.debug = false;
+    canvasTxt.justify = textJustify;
+    canvasTxt.align = textAlignHorizontal;
+    canvasTxt.vAlign = textAlignVertical;
+    canvasTxt.fontSize = fontSize;
+    canvasTxt.font = fontFamily;
+    canvasTxt.fontStyle = fontStyle;
+    canvasTxt.fontVariant = fontVariant;
+    canvasTxt.fontWeight = fontWeight;
+    canvasTxt.lineHeight = fontLineHeightRatio * fontSize;
+    canvasTxt.drawText(context, text, x, y, width, height);
+    context.closePath();
+};
